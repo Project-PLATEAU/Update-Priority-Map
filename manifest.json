@@ -1,0 +1,354 @@
+{
+  "sitemap": {
+    "baseUrl": "https://Project-PLATEAU.github.io/PLATEAU-UC22-007-Update-Priority-Map/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/PLATEAU-UC22-007-Update-Priority-Map/PLATEAU-UC22-007-Update-Priority-Map/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "nU4iTvUy3TovZ5vfF0zAcWjy8AjFG4S+lQg/Ei7eaxw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/create_update_priority_map.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/create_update_priority_map.html",
+          "hash": "OoC4fhUVM+IDAPLKcCTUU4a3zi+aF77fDJj+q2Zziek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/download_image.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/download_image.html",
+          "hash": "x2OOB+eEIoZtE2UgZVyg2yF3+5M7Ozbc4XCK0Yzm29c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/environment.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/environment.html",
+          "hash": "lLfBQqtNh1ioR4KMvls1Cm6+VwM/rV88crj9YqljkN8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/run_change_detection.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/run_change_detection.html",
+          "hash": "xDuIGxNQkXtjXh5irldXYzZGIdTWmgCSVLbtgJ8G6tc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/setting.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/setting.html",
+          "hash": "aQZVW1jakUB1VmwF4WPyF9KXCN9PkGvKeindqU+xK8k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "tqVLTqSYGw29ii4hZ4OS+xZAi5NlchPkZ4dO2WitpLg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/view_update_priority_map.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/view_update_priority_map.html",
+          "hash": "fxJZoU9BCAg6QmKlHeIUiMUd4Xb6V3x7ElOnT5BL3UA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index/result_view_plateauview_new.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index/result_view_plateauview_new.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index/result_view_plateauview_old.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index/result_view_plateauview_old.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/download_image/check_download_image_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/download_image/check_download_image_qgis.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/run_change_detection/check_probmap_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/run_change_detection/check_probmap_qgis.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/check_3rd-mesh_jstatmap.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/check_3rd-mesh_jstatmap.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/check_3rd-mesh_pdf.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/check_3rd-mesh_pdf.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/check_3rd-mesh_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/check_3rd-mesh_qgis.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road_2.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road_2.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road_3.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road_3.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road_4.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road_4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road_5.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road_5.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/citygml2shp_qgis_road_6.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/citygml2shp_qgis_road_6.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_result_qgis_new.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_result_qgis_new.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_result_qgis_old.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_result_qgis_old.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_sample_update_priority_map.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_sample_update_priority_map.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "06uiBuftZaXpQ8azBe5iXhY37/sextPwNZwV63tkIxk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 7,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

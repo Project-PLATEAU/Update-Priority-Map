@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503;&#12398;&#20316;&#25104; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503;&#12398;&#20316;&#25104; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="更新優先度マップの作成">更新優先度マップの作成</h1>
+
+<h2 id="概要">概要</h2>
+<p>本ページでは、建物変化確率画像から更新優先度マップの作成およびスタイリングを行います。    </p>
+<h2 id="step1-更新優先度マップの生成">STEP1: 更新優先度マップの生成</h2>
+<p>以下のコマンドを実行して更新優先度マップのメッシュを生成します。  </p>
+<pre><code class="lang-bash">python create_mesh.py
+</code></pre><p><code>ls</code>コマンドで<a href="setting.html">更新優先度マップ作成の条件設定</a>にて設定した画像の保存先に、3～5次メッシュのGeoJSONファイルが格納されていることを確認します。<br>命名規則は以下の通りになっています。<br><code>[ファイル名]_[地域メッシュの次数].geojson</code>  </p>
+<pre><code class="lang-bash">(update_priority_map) root@e5c04beb7310:/workspace/data/sample/mesh# ls
+sample_3rd.geojson  sample_4th.geojson  sample_5th.geojson
+(update_priority_map) root@e5c04beb7310:/workspace/data/sample/mesh#
+</code></pre><h2 id="step2-更新優先度マップのスタイリング">STEP2: 更新優先度マップのスタイリング</h2>
+<p>以下のコマンドを実行して更新優先度に応じて色付けされたメッシュを生成します。なお、色付けが反映されるのは<a href="https://github.com/mapbox/simplestyle-spec">symplestyle-spec</a> 対応のWebGISで表示する場合のみとなります。  </p>
+<pre><code class="lang-bash">python style_mesh.py
+</code></pre><p><code>ls</code>コマンドで<a href="setting.html">更新優先度マップ作成の条件設定</a>にて設定した画像の保存先に、3～5次メッシュのGeoJSONファイルが格納されていることを確認します。<br>命名規則は以下の通りになっています。<br><code>[ファイル名]_[地域メッシュの次数]_[変化率計算時に使用した指標].geojson</code>  </p>
+<pre><code class="lang-bash">(update_priority_map) root@e5c04beb7310:/workspace/data/sample/priority_map# ls
+sample_3rd_lod0.geojson  sample_4th_lod0.geojson  sample_5th_lod0.geojson
+(update_priority_map) root@e5c04beb7310:/workspace/data/sample/priority_map#
+</code></pre><h2 id="備考-スタイリングについて">備考: スタイリングについて</h2>
+<p>設定ファイルの<code>style</code>部分にてメッシュの枠線や塗りつぶしに関する設定を記載することが可能です。<br>対応する項目とその説明は、以下の表のようになります。  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">項目</th>
+<th style="text-align:left">説明</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">stroke</td>
+<td style="text-align:left">メッシュの枠線の色</td>
+<td style="text-align:left">16進カラーコードで記載</td>
+</tr>
+<tr>
+<td style="text-align:center">stroke-width</td>
+<td style="text-align:left">メッシュの枠線の太さ</td>
+<td style="text-align:left">単位はpx</td>
+</tr>
+<tr>
+<td style="text-align:center">stroke-opacity</td>
+<td style="text-align:left">メッシュの枠線の透明度</td>
+<td style="text-align:left">0（完全に透過）～1（不透過）の10進小数で指定</td>
+</tr>
+<tr>
+<td style="text-align:center">fill</td>
+<td style="text-align:left">メッシュの塗りつぶし色のリスト</td>
+<td style="text-align:left">左から優先度が低い順<br>16進カラーコードで記載</td>
+</tr>
+<tr>
+<td style="text-align:center">fill-opacity</td>
+<td style="text-align:left">メッシュの塗りつぶし色の透明度</td>
+<td style="text-align:left">0（完全に透過）～1（不透過）の10進小数で指定</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pascoais/PLATEAU-UC22-007-Update-Priority-Map/blob/main/Documentation/manual/create_update_priority_map.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            3D都市モデルの更新優先度マップ
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

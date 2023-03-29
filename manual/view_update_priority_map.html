@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503;&#12398;&#34920;&#31034; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503;&#12398;&#34920;&#31034; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="更新優先度マップの表示">更新優先度マップの表示</h1>
+
+<h2 id="概要">概要</h2>
+<p>本ページでは、作成した更新優先度マップの表示を行います。    </p>
+<h2 id="plateau-viewでの表示">PLATEAU VIEWでの表示</h2>
+<p>作成した更新優先度マップのGeoJSONファイルを<a href="https://plateauview.mlit.go.jp/">PLATEAU VIEW</a>にドラッグ&amp;ドロップすることで表示されます。  </p>
+<p><img src="../resources/manual/view_update_priority_map/view_sample_update_priority_map.png" alt="作成した更新優先度マップをPLATEAU VIEWで表示した例"></p>
+<h2 id="gisでの表示">GISでの表示</h2>
+<p>ダウンロードした旧時期航空写真や新時期ALOS-3衛星（シミュレーション）画像、更新優先度マップをGISに表示させることにより、実際に更新優先度が高いメッシュでどのくらい建築物の面積が変わっているかなどを確認することができます。<br>なお、GISで更新優先度マップを表示した場合は、<a href="create_update_priority_map.html#step2-更新優先度マップのスタイリング">こちら</a>で設定したスタイルは反映されません。  </p>
+<div class="tabGroup" id="tabgroup_3wvN7fvmLe">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3wvN7fvmLe_oldview" role="tab" aria-controls="tabpanel_3wvN7fvmLe_oldview" data-tab="oldview" tabindex="0" aria-selected="true">更新優先度マップと旧時期航空写真を表示</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3wvN7fvmLe_newview" role="tab" aria-controls="tabpanel_3wvN7fvmLe_newview" data-tab="newview" tabindex="-1">更新優先度マップと新時期ALOS-3衛星シミュレーション画像を表示</a>
+</li>
+</ul>
+<section id="tabpanel_3wvN7fvmLe_oldview" role="tabpanel" data-tab="oldview">
+<p><img src="../resources/manual/view_update_priority_map/view_result_qgis_old.png" alt="更新優先度マップと旧時期航空写真をQGISで表示した例"></p>
+</section>
+<section id="tabpanel_3wvN7fvmLe_newview" role="tabpanel" data-tab="newview" aria-hidden="true" hidden="hidden">
+<p><img src="../resources/manual/view_update_priority_map/view_result_qgis_new.png" alt="更新優先度マップと新時期ALOS-3衛星シミュレーション画像をQGISで表示した例"></p>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pascoais/PLATEAU-UC22-007-Update-Priority-Map/blob/main/Documentation/manual/view_update_priority_map.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            3D都市モデルの更新優先度マップ
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

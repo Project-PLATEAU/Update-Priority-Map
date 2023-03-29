@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#20107;&#21069;&#28310;&#20633;: &#29872;&#22659;&#27083;&#31689; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#20107;&#21069;&#28310;&#20633;: &#29872;&#22659;&#27083;&#31689; | 3D&#37117;&#24066;&#12514;&#12487;&#12523;&#12398;&#26356;&#26032;&#20778;&#20808;&#24230;&#12510;&#12483;&#12503; ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="事前準備-環境構築">事前準備: 環境構築</h1>
+
+<h2 id="概要">概要</h2>
+<p>本ページでは、更新優先度マップ作成スクリプトが動作する環境構築の方法を記載しています。  </p>
+<h2 id="前提条件">前提条件</h2>
+<p>本マニュアルは以下のスペックを持つワークステーションで動かした結果に基づき作成しています。  </p>
+<blockquote><ul>
+<li>OS: Ubuntu20.04 LTS (Windows11上にWSL2を用いて構築)  </li>
+<li>CPU: Intel(R) Xeon(R) W-2223  </li>
+<li>GPU: NVIDIA T1000 8GB  </li>
+</ul>
+</blockquote>
+<p>そのため、以下の条件下で動かすことを想定しています。  </p>
+<ul>
+<li>インターネットにつながる環境であること  </li>
+<li>NVIDIA社製のGPUを搭載していること  </li>
+<li><code>git clone</code>時に100MB以上のファイルがあるため、Git Large File Storage（Git LFS）がインストールされていること  </li>
+<li>DockerおよびNVIDIA Container Toolkit(nvidia-docker)を導入していること  </li>
+</ul>
+<p>また、ウェブブラウザおよびGISとして以下のものを使用していますが、ご自分で使用しているソフトウェアで構いません。  </p>
+<blockquote><ul>
+<li>ウェブブラウザ: Microsoft Edge</li>
+<li>GIS: QGIS</li>
+</ul>
+</blockquote>
+<h2 id="step1-リポジトリのクローン">STEP1: リポジトリのクローン</h2>
+<p>更新優先度マップ作成のスクリプトをGitHubリポジトリよりクローンして入手します。</p>
+<div class="tabGroup" id="tabgroup_WX5I1cPnTE">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_WX5I1cPnTE_https" role="tab" aria-controls="tabpanel_WX5I1cPnTE_https" data-tab="https" tabindex="0" aria-selected="true">HTTPS</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_WX5I1cPnTE_ssh" role="tab" aria-controls="tabpanel_WX5I1cPnTE_ssh" data-tab="ssh" tabindex="-1">SSH</a>
+</li>
+</ul>
+<section id="tabpanel_WX5I1cPnTE_https" role="tabpanel" data-tab="https">
+<pre><code class="lang-bash">git clone https://github.com/Project-PLATEAU/PLATEAU-UC22-007-Update-Priority-Map.git [リポジトリのクローン先]  
+</code></pre></section>
+<section id="tabpanel_WX5I1cPnTE_ssh" role="tabpanel" data-tab="ssh" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-bash">git clone git@github.com:Project-PLATEAU/PLATEAU-UC22-007-Update-Priority-Map.git [リポジトリのクローン先]  
+</code></pre></section>
+</div>
+<p><br></p>
+<p>リポジトリのクローン先に更新優先度マップ作成のスクリプトが格納されていることを確認後、<code>data</code>および<code>pretrained</code>にあるZIPファイルを解凍します。  </p>
+<div class="TIP"><h5>Tip</h5><p>生成した更新優先度マップの表示のため、<code>リポジトリのクローン先</code> はGISやWebGISが実行できる環境のパスを推奨します。<br>WSL2を使用している場合は、<code>/mnt/c/</code>でWindows OS側のCドライブを指定することができます。<br>なお、<strong>日本語が含まれないようにしてください。</strong><br>例) Windows OS側のパスが<code>C:\workspace</code>の場合は、<code>/mnt/c/workspace</code>  </p>
+</div>
+<h2 id="step2-dockerイメージの作成">STEP2: Dockerイメージの作成</h2>
+<p><strong>STEP2-1: Dockerイメージを作成</strong>  </p>
+<pre><code class="lang-bash">cd environments
+docker image build -t [リポジトリ名]:[タグ] .
+</code></pre><p><strong>STEP2-2: 作成したDockerイメージの確認</strong></p>
+<pre><code class="lang-bash">docker image ls
+</code></pre><p><code>REPOSITORY</code>および<code>TAG</code>の箇所に、リポジトリ名とタグが表示されていれば問題ありません。  </p>
+<p><strong>例) 以下の条件でDockerイメージを作成し、作成されたことを確認</strong>  </p>
+<blockquote><ul>
+<li>リポジトリ名: update-priority-map</li>
+<li>タグ: 202303</li>
+</ul>
+</blockquote>
+<pre><code class="lang-bash">$ cd environments
+$ docker image build -t update-priority-map:202303 .
+</code></pre><pre><code class="lang-bash">$ docker image ls
+REPOSITORY            TAG        IMAGE ID       CREATED              SIZE
+update-priority-map   202303     dc8bf31fdba4   About a minute ago   16.7GB
+</code></pre><h2 id="step3-コンテナの起動">STEP3: コンテナの起動</h2>
+<p><strong>STEP3-1: コンテナの起動</strong></p>
+<pre><code class="lang-bash">docker run --gpus all -v [ホスト側のパス]:/workspace -it [リポジトリ名]:[タグ] /bin/bash
+</code></pre><p><code>リポジトリ名</code>および<code>タグ</code>には<a href="environment.html#step2-dockerイメージの作成">STEP2: Dockerイメージの作成</a>で使用したものを指定してください。<br>また、<code>ホスト側のパス</code>にはGitHubからクローンしてきたリポジトリのトップディレクトリのパスを指定してください。  </p>
+<p><strong>STEP3-2: GPUを認識しているか確認</strong><br>以下のコマンドが実行できる場合は、GPUを認識しています。  </p>
+<pre><code class="lang-bash">nvidia-smi
+</code></pre><p><strong>例) 以下の条件の場合におけるコンテナの起動</strong> </p>
+<blockquote><ul>
+<li>Dockerイメージ<ul>
+<li>リポジトリ名: update-priority-map</li>
+<li>タグ: 202303</li>
+</ul>
+</li>
+<li>リポジトリをクローンした場所: <code>/mnt/c/Workspace</code></li>
+</ul>
+</blockquote>
+<pre><code class="lang-bash">$ docker run --gpus all -v /mnt/c/Workspace/PLATEAU-UC22-007-Update-Priority-Map:/workspace -it update-priority-map:202303 /bin/bash
+</code></pre><p>コンテナが正常に起動すると、以下のような表示に変わります。  </p>
+<pre><code class="lang-bash">(update_priority_map) root@f4dc7e0c7cd9:/workspace#
+</code></pre><p>GPUを認識しているか確かめるために、<code>nvidia-smi</code> コマンドを実行します。<br>以下のような出力が表示されれば、コンテナ側でGPUを認識しています。</p>
+<pre><code class="lang-bash">(update_priority_map) root@f4dc7e0c7cd9:/workspace# nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.47.03    Driver Version: 511.65       CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA T1000 8GB    On   | 00000000:21:00.0 Off |                  N/A |
+| 35%   36C    P8    N/A /  50W |    735MiB /  8192MiB |      9%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A        24      G   /Xwayland                       N/A      |
++-----------------------------------------------------------------------------+
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pascoais/PLATEAU-UC22-007-Update-Priority-Map/blob/main/Documentation/manual/environment.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            3D都市モデルの更新優先度マップ
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
