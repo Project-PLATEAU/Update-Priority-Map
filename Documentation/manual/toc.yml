@@ -1,0 +1,16 @@
+- name: 3D都市モデルの更新優先度マップ
+  href: ../index.md
+- name: 利用を開始する
+  items:
+  - name: "事前準備: 環境構築"
+    href: environment.md
+  - name: 条件設定
+    href: setting.md
+  - name: 画像のダウンロード
+    href: download_image.md
+  - name: 変化検出
+    href: run_change_detection.md
+  - name: 更新優先度マップの作成
+    href: create_update_priority_map.md
+  - name: 更新優先度マップの表示
+    href: view_update_priority_map.md

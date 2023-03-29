@@ -1,0 +1,43 @@
+aerial_download:
+  scene: old
+  url: 'https://gic-plateau.s3.ap-northeast-1.amazonaws.com/2020/ortho/tiles'
+  mesh_code : &mesh_code ./data/sample/aoi/3rd_mesh_code.txt
+  zoom_level: 19
+  output: &image_path ./data/sample/image
+
+alos3_download:
+  scene: new
+  url: 'http://localhost:8080/22203_numazu-shi/tiles'
+  mesh_code : *mesh_code
+  zoom_level: 18
+  output: *image_path
+
+generate_probmap:
+  image_path: *image_path
+  target: *mesh_code
+  patch_size: 1024
+  batch_size: 1
+  sr_use: True
+  cd_weight: ./pretrained/unet.pth
+  sr_weight: ./pretrained/rrdb.pth
+  output: &probmap ./data/sample/probmap
+
+create_mesh:
+  probmap: *probmap
+  target: *mesh_code
+  bldg: &lod0 ./data/citygml-bldg-lod0/22203_numazu-shi_bldg.shp
+  threshold: ''
+  epsg: 6676
+  output: &mesh ./data/sample/mesh
+  filename: sample
+
+style:
+  mesh: *mesh
+  output_dir: ./data/sample/priority_map
+  denom: lod0
+  num_classes: 5
+  stroke: '#000000'
+  stroke-width: 2.0
+  stroke-opacity: 1.0
+  fill: ['#ffffff', '#98e1ff', '#daffc7', '#fee480', '#fe8080']
+  fill-opacity: 0.4

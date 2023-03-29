@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>画像のダウンロード | 3D都市モデルの更新優先度マップ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="画像のダウンロード | 3D都市モデルの更新優先度マップ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="画像のダウンロード">画像のダウンロード</h1>
+
+<h2 id="概要">概要</h2>
+<p>本ページでは、更新優先度マップを作成するために必要なデータである旧時期の航空写真および新時期のALOS-3衛星（シミュレーション）画像のダウンロードを行います。</p>
+<h2 id="step1-旧時期航空写真のダウンロード">STEP1: 旧時期航空写真のダウンロード</h2>
+<p>Project PLATEUにて公開されている<a href="https://github.com/Project-PLATEAU/plateau-streaming-tutorial/blob/main/ortho/plateau-ortho-streaming.md">PLATEAUオルソ</a>から<a href="setting.html">更新優先度マップ作成の条件設定</a>で設定した範囲を建築物の変化検出の旧時期に使用する画像としてダウンロードします。<br>
+旧時期航空写真をダウンロードするには、以下のコマンドを実行してください。</p>
+<pre><code class="lang-bash">python download_tile_image.py old
+</code></pre>
+<h2 id="step2-新時期alos-3衛星シミュレーション画像のダウンロード">STEP2: 新時期ALOS-3衛星（シミュレーション）画像のダウンロード</h2>
+<p>本ユースケース開発にて公開しているALOS-3衛星（シミュレーション）画像から<a href="setting.html">更新優先度マップ作成の条件設定</a>で設定した範囲を建築物の変化検出の新時期に使用する画像としてダウンロードします。<br>
+新時期ALOS-3衛星（シミュレーション）画像をダウンロードするには、以下のコマンドを実行してください。</p>
+<pre><code class="lang-bash">python download_tile_image.py new
+</code></pre>
+<h2 id="step3-ダウンロードした画像の確認">STEP3: ダウンロードした画像の確認</h2>
+<p><a href="setting.html">更新優先度マップ作成の条件設定</a>にて設定した画像の保存先に<code>old</code>および<code>new</code>というフォルダが生成されています。<br>
+<code>old</code>には旧時期航空写真が、<code>new</code>には新時期ALOS-3衛星（シミュレーション）画像が保存されています。<br>
+<code>ls</code>コマンドで指定した3次メッシュコードをファイル名として、対象範囲の画像が格納されていることを確認します。</p>
+<pre><code class="lang-bash">(update_priority_map) root@e5c04beb7310:/workspace/data/sample/image# ls old
+52385627.png          52385628.png          52385629.png          52385637.png          52385638.png          52385639.png          52385647.png          52385648.png          52385649.png
+52385627.png.aux.xml  52385628.png.aux.xml  52385629.png.aux.xml  52385637.png.aux.xml  52385638.png.aux.xml  52385639.png.aux.xml  52385647.png.aux.xml  52385648.png.aux.xml  52385649.png.aux.xml
+(update_priority_map) root@e5c04beb7310:/workspace/data/sample/image# ls new
+52385627.png          52385628.png          52385629.png          52385637.png          52385638.png          52385639.png          52385647.png          52385648.png          52385649.png
+52385627.png.aux.xml  52385628.png.aux.xml  52385629.png.aux.xml  52385637.png.aux.xml  52385638.png.aux.xml  52385639.png.aux.xml  52385647.png.aux.xml  52385648.png.aux.xml  52385649.png.aux.xml
+(update_priority_map) root@e5c04beb7310:/workspace/data/sample/image#
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>GISが使える方は、指定した範囲の3次メッシュコードのポリゴンとともに画像を表示して、対象範囲の画像がダウンロードされているか確認することも可能です。<br>
+<br>
+<img src="../resources/manual/download_image/check_download_image_qgis.png" alt="GISを用いた確認方法"></p>
+</div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      3D都市モデルの更新優先度マップ
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

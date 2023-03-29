@@ -1,0 +1,9 @@
+# For python code
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# For manual documrnt
+/Documentation/obj
+/.docs

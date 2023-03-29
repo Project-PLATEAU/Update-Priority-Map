@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>更新優先度マップ作成の条件設定 | 3D都市モデルの更新優先度マップ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="更新優先度マップ作成の条件設定 | 3D都市モデルの更新優先度マップ ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="更新優先度マップ作成の条件設定">更新優先度マップ作成の条件設定</h1>
+
+<h2 id="概要">概要</h2>
+<p>本ページでは、更新優先度マップ作成にあたり、以下の条件を設定します。</p>
+<ul>
+<li>更新優先度マップの作成領域</li>
+<li>建築物の変化検出に使用する画像の保存場所</li>
+<li>建築物の変化検出に使用する画像のズームレベル</li>
+</ul>
+<h2 id="step1-更新優先度マップ作成領域の設定">STEP1: 更新優先度マップ作成領域の設定</h2>
+<p>更新優先度マップを作成したい領域を含む3次メッシュコードを以下のサンプルにならい、テキストファイルに記載します。</p>
+<pre><code class="lang-text">52385627
+52385628
+52385629
+52385637
+52385638
+52385639
+52385647
+52385648
+52385649
+</code></pre>
+<p>3次メッシュコードについては、Project PLATEAUで公開しているCityGML形式の3D都市モデルに付随する図郭マップ（<a href="https://www.geospatial.jp/ckan/dataset/plateau-tokyo23ku/resource/28d1efab-c1f9-4ad9-891b-4b8a4b3a99ae">例</a>）のPDFなどをご覧ください。<br>
+なお、処理の関係上、日本全国の3次メッシュポリゴンのESRI Shapefileが<code>./data/Japan-3rd-mesh</code>に格納されています。そのため、GISが使える方はそのデータを用いて3次メッシュコードを確認することもできます。</p>
+<p><img src="../resources/manual/setting/check_3rd-mesh_pdf.png" alt="G空間情報センターで公開されているCityGML形式の3D都市モデルに付随する図郭マップで確認">
+▲ G空間情報センターで公開されているCityGML形式の3D都市モデルに付随する図郭マップで確認した例</p>
+<p><img src="../resources/manual/setting/check_3rd-mesh_qgis.png" alt="QGISを用いて./data/Japan-3rd-meshに格納されている3次メッシュポリゴンで確認">
+▲ QGISを用いて<code>./data/Japan-3rd-mesh</code>に格納されている3次メッシュポリゴンで確認した例</p>
+<h2 id="step2-画像ダウンロードの設定">STEP2: 画像ダウンロードの設定</h2>
+<p><a href="https://github.com/pascoais/PLATEAU-UC22-007-PASCO/blob/main/conf/config.yml">./conf/config.yml</a> （以下、設定ファイルと記載）に以下の項目を設定します。</p>
+<ol>
+<li><a href="setting.html#step1-%E6%9B%B4%E6%96%B0%E5%84%AA%E5%85%88%E5%BA%A6%E3%83%9E%E3%83%83%E3%83%97%E4%BD%9C%E6%88%90%E9%A0%98%E5%9F%9F%E3%81%AE%E8%A8%AD%E5%AE%9A">STEP1</a>で設定した更新優先度マップ作成領域のテキストファイルのパスを<code>aerial_download.mesh_code</code>に記載してください。</li>
+<li>設定ファイルの <code>aerial_download.output</code> に画像保存先のパスを記載してください。</li>
+</ol>
+<pre><code class="lang-yaml">aerial_download:
+  scene: old
+  url: 'https://gic-plateau.s3.ap-northeast-1.amazonaws.com/2020/ortho/tiles'
+  mesh_code : &amp;mesh_code ./data/sample/aoi/3rd_mesh_code_list.txt
+  zoom_level: 19
+  output: &amp;image_path ./data/sample/image
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>設定ファイル の <code>alos3_download.url</code> は検証時のままになっています。ALOS-3衛星（シミュレーション）画像の公開先URLに変更してお使いください。</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<ul>
+<li>福島県郡山市の航空写真は、東側がズームレベル19で提供されていません。そのため、当該地域をダウンロードする場合は、<strong>ズームレベル18でダウンロードしてください。</strong></li>
+<li>大阪府大阪市の航空写真は、解像度が1mとなります。そのため、当該地域をダウンロードする場合は、ズームレベル17でダウンロードすることをお勧めいたします。</li>
+<li>ダウンロードする旧時期航空写真のズームレベルに関しては<code>aerial_download.zoom_level</code>に記載されています。</li>
+</ul>
+</div>
+<h2 id="step3-処理結果出力先の設定">STEP3: 処理結果出力先の設定</h2>
+<p>設定ファイルを用いて建築物の変化確率画像、更新優先度マップ、スタイリングした更新優先度マップの出力先を設定します。</p>
+<p>建築物の変化確率画像は<code>generate_probmap.output</code>に、更新優先度マップは<code>create_mesh.output</code>に、スタイルを反映した更新優先度マップは<code>style.output_dir</code>に出力先のパスを記載してください。<br>
+また、作成する更新優先度マップのファイル名を<code>create_mesh.filename</code>に記載してください。</p>
+<p><strong>建築物の変化確率画像の出力先</strong></p>
+<pre><code class="lang-yaml">generate_probmap:
+  image_path: *image_path
+  target: *mesh_code
+  patch_size: 1024
+  batch_size: 1
+  cd_weight: pretrained/unet.pth
+  sr_weight: pretrained/rrdb.pth
+  output: &amp;probmap ./data/sample/probmap
+</code></pre>
+<p><strong>更新優先度マップの出力先</strong><br>
+更新優先度マップの出力先以外に出力ファイル名も記載してください。</p>
+<pre><code class="lang-yaml">create_mesh:
+  probmap: *probmap
+  target: *mesh_code
+  bldg: &amp;lod0 ./data/citygml-bldg-lod0/22203_numazu-shi_bldg.shp
+  threshold: ''
+  epsg: 6676
+  output: &amp;mesh ./data/sample/mesh
+  filename: sample
+</code></pre>
+<p><strong>スタイルを反映した更新優先度マップの出力先</strong></p>
+<pre><code class="lang-yaml">style:
+  mesh: *mesh
+  output_dir: ./data/sample/priority_map
+  denom: lod0
+  num_classes: 5
+  stroke: '#000000'
+  stroke-width: 2.0
+  stroke-opacity: 1.0
+  fill: ['#ffffff', '#98e1ff', '#daffc7', '#fee480', '#fe8080']
+  fill-opacity: 0.4
+</code></pre>
+<h2 id="step4-更新優先度の計算に関する設定">STEP4: 更新優先度の計算に関する設定</h2>
+<p>更新優先度計算時に使用する建築物ポリゴンのパスおよび変化率の分母を設定します。</p>
+<p><strong>建築物ポリゴン</strong></p>
+<p>Project PLATEAUにて公開している3D都市モデル（CityGML形式）から建築物のLOD0情報を抽出し作成したポリゴンを<code>./data/citygml-bldg-lod0</code>に格納しております。<br>
+更新優先度マップを作成する対象の自治体名が記載されたESRI Shapefile（拡張子がshpのファイル）のパスを設定ファイルの<code>create_mesh.bldg</code>に記載してください。</p>
+<pre><code class="lang-yaml">create_mesh:
+  probmap: *probmap
+  target: *mesh_code
+  bldg: &amp;lod0 ./data/citygml-bldg-lod0/22203_numazu-shi_bldg.shp
+  threshold: ./data/sample/catalog
+  epsg: 6676
+  output: &amp;mesh ./data/sample/mesh
+</code></pre>
+<p><strong>変化率の分母</strong></p>
+<p>変化率計算時に使用する指標を以下から選択し、設定ファイルの<code>style.denom</code>に記載してください。</p>
+<ul>
+<li><code>mesh</code>: 1メッシュ当たりの面積</li>
+<li><code>lod0</code>: 1メッシュ当たりの建築物ポリゴンの面積</li>
+</ul>
+<pre><code class="lang-yaml">style:
+  mesh: *mesh
+  output_dir: ./data/sample/priority_map
+  denom: lod0
+  num_classes: 5
+  stroke: '#000000'
+  stroke-width: 2.0
+  stroke-opacity: 1.0
+  fill: ['#ffffff', '#98e1ff', '#daffc7', '#fee480', '#fe8080']
+  fill-opacity: 0.4
+</code></pre>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      3D都市モデルの更新優先度マップ
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

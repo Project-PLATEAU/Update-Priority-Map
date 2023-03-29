@@ -1,0 +1,214 @@
+{
+  "sitemap": {
+    "baseUrl": "https://pascoais.github.io/PLATEAU-UC22-007-Update-Priority-Map/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/projects/plateau/PLATEAU-UC22-007-Update-Priority-Map-DocFX-Manual/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "fhIJ7frG4a85zeSCq39jFMaXYhPtBzznPvx7RmjUL1A="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/create_update_priority_map.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/create_update_priority_map.html",
+          "hash": "LwfnHzFhtSesFmIDrZ2BOOb3Z126TsPmO4Cao5qLf2o="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/download_image.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/download_image.html",
+          "hash": "O52kbH17CBO+TyFhDxTEHXZwXZIVx8nrlto/DQ2THsY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/environment.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/environment.html",
+          "hash": "YiV/2T1MkekQyLgKFMVMke8VS1mO970uBl0JLR8hAnI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/run_change_detection.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/run_change_detection.html",
+          "hash": "yly8Ow176QQujG+vLPSNUjBG3OfFdjmoZEuTcwWT/8s="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/setting.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/setting.html",
+          "hash": "5HAudD8eDgHUMVa7zK5F/7JuriMdRhXGaYpA5F5us7I="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "Z+hB0YfumKTbcnH5Ul+OQ6tmh6L3Yhhjxa+2vP+F6U0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/view_update_priority_map.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/view_update_priority_map.html",
+          "hash": "/dwd2D3IfuB7PEoKqaS/ZzQVQffQq6JRuIWzz7Oix14="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index/result_view_plateauview_new.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index/result_view_plateauview_new.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/index/result_view_plateauview_old.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/index/result_view_plateauview_old.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/download_image/check_download_image_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/download_image/check_download_image_qgis.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/run_change_detection/check_probmap_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/run_change_detection/check_probmap_qgis.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/check_3rd-mesh_pdf.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/check_3rd-mesh_pdf.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/setting/check_3rd-mesh_qgis.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/setting/check_3rd-mesh_qgis.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_result_qgis_new.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_result_qgis_new.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_result_qgis_old.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_result_qgis_old.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/view_update_priority_map/view_sample_update_priority_map.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/view_update_priority_map/view_sample_update_priority_map.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "torbzyZYAO9c5e0wKnkgsb/bXMuHNFHzJjanHG7O0nM="
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

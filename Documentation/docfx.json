@@ -1,0 +1,39 @@
+{
+  "metadata": [
+  ],
+  "build": {
+      "globalMetadata": {
+          "_appTitle": "3D都市モデルの更新優先度マップ",
+          "_appFooter": "3D都市モデルの更新優先度マップ",
+          "_enableSearch": true
+      },
+      "content": [
+          {
+              "files": [
+                  "toc.yml",
+                  "index.md"
+              ]
+          },
+          {
+              "src": "manual",
+              "files": [
+                  "toc.yml",
+                  "*.md"
+              ],
+              "dest": "manual"
+          }
+      ],
+      "resource": [
+          {
+              "files": [
+                  "resources/**/*"
+              ]
+          }
+      ],
+      "sitemap": {
+          "baseUrl": "https://Project-PLATEAU.github.io/PLATEAU-UC22-007-Update-Priority-Map",
+          "changefreq": "weekly"
+      },
+      "dest": "../.docs/_site"
+  }
+}

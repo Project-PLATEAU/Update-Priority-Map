@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>令和4年度 民間ユースケース開発　UC22-007「3D都市モデルの更新優先度マップ」 | 3D都市モデルの更新優先度マップ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="令和4年度 民間ユースケース開発　UC22-007「3D都市モデルの更新優先度マップ」 | 3D都市モデルの更新優先度マップ ">
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="manual/toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="令和4年度-民間ユースケース開発uc22-0073d都市モデルの更新優先度マップ">令和4年度 民間ユースケース開発　UC22-007「3D都市モデルの更新優先度マップ」</h1>
+
+<p>Project PLATEAUにて公開されている航空写真とALOS-3衛星（シミュレーション）画像の間において、建築物の変化箇所を検出し更新優先度のメッシュを生成します。</p>
+<br>
+<div class="tabGroup" id="tabgroup_bHGHmlrG6S">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S_old" role="tab" aria-controls="tabpanel_bHGHmlrG6S_old" data-tab="old" tabindex="0" aria-selected="true">旧時期（2017年撮影 航空写真）</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_bHGHmlrG6S_new" role="tab" aria-controls="tabpanel_bHGHmlrG6S_new" data-tab="new" tabindex="-1">新時期（2019年撮影 ALOS-3衛星シミュレーション画像）</a>
+</li>
+</ul>
+<section id="tabpanel_bHGHmlrG6S_old" role="tabpanel" data-tab="old">
+
+<p><img src="resources/index/result_view_plateauview_old.png" alt="更新優先度マップをPLATEAUVIEWで表示した例"></p>
+</section>
+<section id="tabpanel_bHGHmlrG6S_new" role="tabpanel" data-tab="new" aria-hidden="true" hidden="hidden">
+
+<p><img src="resources/index/result_view_plateauview_new.png" alt="更新優先度マップをPLATEAUVIEWで表示した例"></p>
+</section>
+</div>
+<h2 id="ユースケースの概要">ユースケースの概要</h2>
+<p>インフラ維持管理や災害復旧等の多様な領域で課題解決に貢献する3D都市モデルの活用を更に進めるためには、3D都市モデルの更新頻度を高め、現実の都市空間との同一性を保つことが重要となります。<br>
+本ユースケースでは、3D都市モデルの整備に利用した航空写真と撮影頻度が高い衛星画像を比較し、建物等の新築・滅失等の変化を抽出するAIモデルを開発しました。<br>
+これにより、3D都市モデルと現実空間の差分を低コストで迅速に可視化し、3D都市モデルのデータの更新を促していくことを目標としています。</p>
+<h2 id="開発システムの概要">開発システムの概要</h2>
+<p>Project PLATEAUにて公開されている航空写真とALOS-3衛星（シミュレーション）画像の間において、AIを用いて建築物の変化箇所を検出し、地域メッシュ（3～5次）単位で更新優先度の情報を持ったメッシュを生成します。</p>
+<p>GitHubリポジトリにて、以下の処理を行うスクリプトをOSSとして公開しています。</p>
+<ul>
+<li>変化検出に使用する画像のダウンロード</li>
+<li>深層学習モデルを用いた旧時期航空写真と新時期ALOS-3衛星（シミュレーション）画像からの建築物の変化確率画像生成</li>
+<li>生成した建築物の変化確率画像を用いた更新優先度マップの生成およびスタイリング</li>
+</ul>
+<h2 id="ライセンス">ライセンス</h2>
+<ul>
+<li>本マニュアルの著作権は国土交通省に帰属します。</li>
+<li>本マニュアルは<a href="https://www.mlit.go.jp/plateau/sitepolicy/">Project PLATEAUのサイトポリシー</a>（CC BY 4.0および政府標準利用規約2.0）に従い提供されています。</li>
+</ul>
+<h2 id="注意事項">注意事項</h2>
+<ul>
+<li>本マニュアルは参考資料として提供しているものです。動作保証は行っておりません。</li>
+<li>予告なく変更・削除する可能性があります。</li>
+<li>本マニュアルの利用により生じた損失及び損害等について、国土交通省はいかなる責任も負わないものとします。</li>
+</ul>
+<h2 id="参考資料">参考資料</h2>
+<ul>
+<li><a href="https://www.mlit.go.jp/plateau/libraries/technical-reports/">3D都市モデルの更新優先度マップ 技術検証レポート</a></li>
+<li><a href="https://www.mlit.go.jp/plateau/use-case/uc22-007/">PLATEAU Webサイト Use caseページ「3D都市モデルの更新優先度マップ」</a></li>
+<li><a href="https://github.com/pascoais/PLATEAU-UC22-007-Update-Priority-Map">GitHubリポジトリ</a></li>
+</ul>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      3D都市モデルの更新優先度マップ
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
