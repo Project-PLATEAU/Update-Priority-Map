@@ -15,7 +15,7 @@
 
 
 ## 3．利用手順
-詳しくは[マニュアル](https://project-plateau.github.io/PLATEAU-UC22-007-Update-Priority-Map/)をご覧ください。
+詳しくは[マニュアル](https://project-plateau.github.io/UC22-007-Update-Priority-Map/)をご覧ください。
 
 **利用の前提条件**    
 * インターネットに繋がる環境であること
